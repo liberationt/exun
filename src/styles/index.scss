@@ -1,0 +1,75 @@
+@import './reset';
+.mainWidth{
+    width:1300px;
+    margin: 0 auto;
+}
+.displayFlex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.display{
+    display: flex;
+}
+.halfWidth{
+    width:50%;
+}
+.swiper{
+    .el-carousel__indicators--horizontal{
+        display: none !important;
+    }
+}
+.cursorPointer{
+    cursor: pointer;
+}
+.login{
+    .el-form-item__content{
+        line-height: 34px;
+    }
+    .el-input input{
+        height:33px;line-height: 33px;
+    }
+    .el-form-item{
+        margin-bottom: 20px;
+    }
+    ::-webkit-input-placeholder {
+        font-size: 12px;
+    }
+    .el-input-group__prepend {
+        padding:0 5px;
+        background:#fff;
+        border-right:none;
+    }
+    .el-checkbox__label{
+        font-size:12px;
+    }
+}
+.search{
+    .el-input__inner{
+        border:none;
+    }
+    .el-input-group__append button.el-button, .el-input-group__append div.el-select .el-input__inner, .el-input-group__append div.el-select:hover .el-input__inner, .el-input-group__prepend button.el-button, .el-input-group__prepend div.el-select .el-input__inner, .el-input-group__prepend div.el-select:hover .el-input__inner{
+        border:none !important;
+        background:#323E9F;
+        color:#fff;
+        padding-left:30px;
+        padding-right:30px;
+    }
+    .el-input-group__append, .el-input-group__prepend{
+        border:none;
+    }
+}
+.menuInfor::-webkit-scrollbar{
+    width:0px !important;
+}
+.el-carousel__container{
+    height:907px;
+}
+$directions:("t":"top", "b":"bottom", "l":"left", "r":"right");
+$dimensions:("p":"padding", "m":"margin");
+@each $dim in $dimensions { @each $dir in $directions { @for $i from 1 through 280 { $size: $i*1; .#{nth($dim,1)}#{nth($dir,1)}#{$size} { #{nth($dim,2)}-#{nth($dir,2)}: #{$size}px; } } } }
+@for $j from 1 through 100 {
+  .font#{$j}{
+      font-size: $j * 1px;
+  }
+}
